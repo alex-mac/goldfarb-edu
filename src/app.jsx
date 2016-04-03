@@ -3,7 +3,8 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 
 // components
-const About = require('./components/About');
+const Index = require("./views/index.jsx");
+
 
 // router dependencies
 const Router = require('react-router').Router;
@@ -12,13 +13,11 @@ const Link = require('react-router').Link
 const browserHistory = require('react-router').browserHistory;
 
 const App = React.createClass({
-  render: function() {
-    <Router history={browserHistory}>
-      <Route path='/' component={OMDBSearch} />
-      <Route path='/about' component={About} />
-      <Route path='/results/:imdbID' component={ShowMovie}/>
-    </Router>
-  }
+render() {
+   return (
+   	<Index />
+		);
+	}
 });
 
 ReactDOM.render(<App />, document.getElementById('container'));
