@@ -4,7 +4,7 @@ var browserify = require('browserify');
 var babelify = require('babelify');
 var source = require('vinyl-source-stream');
 var browserSync = require('browser-sync').create();
-var reload = browserSync.reload
+var reload = browserSync.reload;
 
 gulp.task('build', function() {
   browserify({
@@ -24,9 +24,9 @@ gulp.task('browser-sync', function() {
     server: {
       baseDir: "./public"
     },
-    notify: false
+    notify: false,
+    ui: false
   });
-
 });
 
 gulp.task('sass', function() {
@@ -38,9 +38,11 @@ gulp.task('sass', function() {
 
 gulp.task('watch-sass', function() {
   gulp.watch('sass/**/*.sass', ['sass'])
-  gulp.watch('public/index.html').on('change', reload({stream: true}));
+  // gulp.watch('public/index.html').on('change', reload({stream: true}));
 })
 
 gulp.task('watch', function() {
   gulp.watch('src/**/*.jsx', ['build']);
 });
+
+gulp.task('default', ['browser-sync', 'build', 'sass', 'watch', 'watch-sass']);
