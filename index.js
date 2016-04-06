@@ -1,6 +1,10 @@
 var express = require('express');
 var app = express();
 
+// Mongoose
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/goldfarb');
+
 app.use(express.static(__dirname + '/public/'));
 
 app.get('*', function(req, res) {
