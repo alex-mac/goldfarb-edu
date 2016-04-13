@@ -32,6 +32,8 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "mongoose": "^4.4.11"
+    "mongoose": "^4.4.11",
+    "pg": "^4.5.3",
+    "sequelize": "^3.21.0"
   }
 }

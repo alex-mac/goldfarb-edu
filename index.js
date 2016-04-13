@@ -1,9 +1,6 @@
 var express = require('express');
 var app = express();
-
-// Mongoose
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/goldfarb');
+var db = require("./models");
 
 app.use(express.static(__dirname + '/public/'));
 
