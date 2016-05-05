@@ -1,1 +1,0 @@
-COPY topics FROM '/Users/alexmac3/Projects/goldfarb-edu/data/Topics-and-Responses.csv' DELIMITER ',' CSV;
