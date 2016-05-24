@@ -11,7 +11,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(ejsLayouts);
 
-app.use('/', require('./controllers/topics'));
+// app.use('/hero', require('./controllers/topics'));
+
+app.use('/', require('./controllers/first'));
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/index.html'));
