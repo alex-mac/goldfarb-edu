@@ -1,0 +1,94 @@
+@media screen and (max-width: 768px) {
+	#bodyh1 {
+		font-size: 24px;
+	}
+	#imagepgheader {
+		height: 275px;
+	}
+
+	img#logo {
+		margin-left: 0px;
+		height: 25px;
+		width: 100px;
+	}
+	.navbar {
+		height: 55px;
+	}
+
+	.bodyp {
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+	height: 425px;
+/*	margin-bottom: 200px;*/
+	font-size: 15px;
+	}
+
+	#linkedin {
+		height: 20px;
+		width: 20px;
+	}
+
+	#footer {
+		padding-top: 4px;
+	}
+
+	.navbar-toggle .icon-bar {
+	  display: block;
+	  width: 22px;
+	  height: 2px;
+	  background-color: #5f6062;
+	  border-radius: 1px;
+
+	}
+	.navbar-toggle {
+		border: 1px solid #5f6062;
+		padding: 6px 4px;
+		margin-top: 13px;
+	}
+	#servicesp {
+		margin-bottom: 75px; 
+	}
+
+	form {
+		width: 100%;
+	}
+	#contacttitle {
+		font-size: 15px;
+	}
+
+	iframe {
+	margin-left: 20px;
+	height: 150px;
+	width: 337px;
+	margin-bottom: 100px;
+	}
+
+
+	#bodyh2 {
+		font-size: 20px;
+	}
+
+	#myNavbar {
+
+		font-size: 15px;
+		background-color: #f7f7f7;
+		width: 50%;
+	}
+
+
+	.container-fluid>.navbar-collapse {
+		float: right;
+	}
+
+
+	.img-circle {
+		height: 100px;
+		width: 100px;
+
+	}
+
+	#aboutp {
+		margin-bottom: 100px;
+	}
+}
