@@ -1,0 +1,28 @@
+.form-control {
+	border-radius: 0px;
+}
+#contactheaders {
+	font-family: 'Oswald', sans-serif;
+	font-size: 30px;
+
+}
+
+#address {
+	font-family: 'Old Standard TT', serif;
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
+.btn {
+	border-radius: 0px;
+}
+
+#contactcontainer {
+	margin-bottom: 25px;
+}
+
+iframe {
+	margin-left: 150px;
+	margin-bottom: 100px;
+}
+
