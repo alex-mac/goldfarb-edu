@@ -1,4 +1,4 @@
-var MyApp = angular.module('GoldfarbApp', ['ngRoute']);
+var MyApp = angular.module('GoldfarbApp', ['ngRoute', 'GoldfarbCtrls']);
 
 MyApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 	console.log('App Running')
@@ -7,16 +7,17 @@ MyApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
 		templateUrl: 'app/views/home.html'
 	})
 	.when('/services', {
-		templateUrl: 'app/views/services.html',
+		templateUrl: 'app/views/services.html'
 	})
 	.when('/contactus',{
-		templateUrl: 'app/views/contactus.html',
+		templateUrl: 'app/views/contactus.html'
 	})
 	.when('/about',{
-		templateUrl: 'app/views/about.html',
+		templateUrl: 'app/views/about.html'
 	})
 	.when('/infobank', {
-		templateUrl: 'app/views/infobank.html',
+		templateUrl: 'app/views/infobank.ejs',
+		control: 'DataCtrl'
 	});
 	$locationProvider.html5Mode(true);
 }])
