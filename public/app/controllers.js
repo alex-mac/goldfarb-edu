@@ -1,5 +1,7 @@
+console.log('controllers are a go');
+
 angular.module('GoldfarbCtrls', [])
 .controller('DataCtrl', ['$scope', function ($scope) {
-  console.log('fuck man');
-  console.log('can you see me now mommy');
+  $scope.data = 'fucking insane';
+  
 }]);
