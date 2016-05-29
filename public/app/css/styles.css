@@ -160,6 +160,7 @@ a {
 #linkedin {
 	/*background-color: #0093d0;*/
 	background-image: url('../images/linkedin.png');
+	background-size: cover;
 	height: 30px;
 	width: 30px;
 	margin-left: auto;
