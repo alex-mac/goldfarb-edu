@@ -61,23 +61,15 @@
 </div>
 
 <div class="contactform">
-        <form>
-        <fieldset>
-          <label for="exampleInputName">Name</label>
-          <input type="name" class="form-control" id="exampleInputPassword1" placeholder="ex. Jane Doe"><br>
-        </fieldset>
-
-        <fieldset class="form-group">
-          <label for="exampleInputEmail1">Email Address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ex. janedoe@gmail.com">
-        </fieldset>
-
-        <fieldset class="form-group">
-          <label for="exampleTextarea">Request Information</label>
-          <textarea class="form-control" id="exampleTextarea" rows="3"></textarea><br>
-           <button type="submit" class="btn btn-primary">Submit</button>
-        </fieldset>
-        </form> 
+        <form action="MAILTO:jgoldfarb@goldfarbedconsult.com" method="post" enctype="text/plain">
+        Name<br>
+        <input id="inputfield" type="text" name="name" value=""><br>
+        Your E-mail<br>
+        <input id="inputfield" type="text" name="mail" value=""><br>
+        Message<br>
+        <input id="inputfield2" type="text" name="comment" value=""><br><br>
+        <button class="btn btn-primary" type="submit" value="Send">Send</button>
+        </form>
  </div>
 
     <footer>
