@@ -6,9 +6,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"><img src="../images/editedlogo.png" id="logo" height="75px" width="300px"></a>
-      </div>
-
+      <a href="/">
+      <div id="logo"></div>
+      </a>
+    </div>
+ 
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">      
             <li><a href="/">Home</a></li>
@@ -19,7 +21,7 @@
         </ul>
       </div>
    </div> 
-  </nav>     
+  </nav>    
 
     <div id="headimage5">
     </div>
@@ -28,29 +30,17 @@
      <!--  <div class="bodyp"> -->
         <h1 id="bodyh1"> Interested in a Consultation? </h1>
         <hr>
-      <form>
-        <fieldset class="form-group">
-          <label for="exampleInputName">Name</label>
-          <input type="name" class="form-control" id="exampleInputPassword1" placeholder="ex. Jane Doe">
-        </fieldset>
-
-        <fieldset class="form-group">
-          <label for="exampleInputEmail1">Email Address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ex. janedoe@gmail.com">
-        </fieldset>
-
-          <fieldset class="form-group">
-          <label for="exampleInputEmail1">Subject</label>
-          <input type="email" class="form-control" id="subject" placeholder="Subject">
-        </fieldset>
-
-        <fieldset class="form-group">
-          <label for="exampleTextarea">Message</label>
-          <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-        </fieldset>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+        <div class="contactform">
+          <form action="MAILTO:jgoldfarb@goldfarbedconsult.com" method="post" enctype="text/plain">
+          Name<br>
+          <input id="inputfield" type="text" name="name" value=""><br>
+          Your E-mail<br>
+          <input id="inputfield" type="text" name="mail" value=""><br>
+          Message<br>
+          <input id="inputfield2" type="text" name="comment" value=""><br><br>
+          <button class="btn btn-primary" type="submit" value="Send">Send</button>
+          </form>
+       </div>
 
       <h1 id="bodyh1">Contact Information</h1>
       <hr>
@@ -70,7 +60,7 @@
       <nav class="navbar navbar-default navbar-fixed-bottom" id="footer">
         <div class="container">
           <a href="">
-          <img src="images/linkedin.png" id="linkedin" height="30px" width="30px" alt="linkedin">
+          <img src="../images/linkedin.png" id="linkedin" height="30px" width="30px" alt="linkedin">
           </a>
           <p>(e) info@goldfarbedconsult.com</p>
         </div>
