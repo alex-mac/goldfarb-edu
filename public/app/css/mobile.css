@@ -126,3 +126,10 @@
 		padding-top: 4px;
 	}
 }
+
+/*@media screen and (max-width: 1024px) {
+	iframe {
+		margin-left: 268px;
+	}
+}
+*/
