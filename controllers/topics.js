@@ -3,13 +3,14 @@ var router = express.Router();
 var db = require("../models");
 
 router.get('/', function(req, res) { 
-  db.topic.findAll({
-    include: [db.subtopic]
-  }).then(function(data){
-    res.render('goldfarb', {data: data});
+  // db.topic.findAll({
+  //   include: [db.subtopic]
+  // }).then(function(data)
+  // {
+    res.render('goldfarb');
     // res.send(data);
   });
-});
+// });
 
 
 module.exports = router;

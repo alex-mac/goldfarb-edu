@@ -17,7 +17,7 @@ MyApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
 	})
 	.when('/infobank', {
 		templateUrl: 'app/views/infobank.ejs',
-		controller: 'DataCtrl'
+		// controller: 'DataCtrl'
 	});
 	$locationProvider.html5Mode(true);
 }])

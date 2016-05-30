@@ -1,4 +1,5 @@
-ul, li, p, body {
+/*general themes */
+ul, li, p, body {	
 	font-family: 'Old Standard TT', serif;
 }
 #bodyh1 {
@@ -13,6 +14,8 @@ ul, li, p, body {
 }
 
 
+
+/*header*/
 .navbar {
 	height: 111px;
 	background-color: rgba(255, 255, 255, 0.5);
@@ -29,10 +32,6 @@ ul, li, p, body {
 	margin-left: 20px;
 }
 
-/*img#logo {
-	margin-left: 20px;
-}*/
-
 a {
 	color: #4A4A4A;
 	font-size: 16px;
@@ -44,6 +43,8 @@ a {
 }
 
 
+
+/*bodyimages*/
 #headimage1 {
 	background-image: url('../images/pigtails.jpg');
 	height: 400px;
@@ -121,12 +122,6 @@ a {
 }
 
 
-#chalkwriting {
-	color: white;
-	font-size: 25px;
-	margin-top: 100px;
-}
-
 
 .bodyp {
 	margin-left: auto;
@@ -138,6 +133,9 @@ a {
 	font-size: 20px;
 }
 
+
+
+/*forms*/
 #inputfield {
 	width: 300px;
 	margin-bottom: 10px;
@@ -157,8 +155,11 @@ a {
 	font-size: 20px;
 }
 
+
+
+
+/*footer*/
 #linkedin {
-	/*background-color: #0093d0;*/
 	background-image: url('../images/linkedin.png');
 	background-size: cover;
 	height: 30px;
