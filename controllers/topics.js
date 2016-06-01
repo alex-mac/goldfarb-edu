@@ -6,9 +6,11 @@ router.get('/', function(req, res) {
   db.topic.findAll({
     include: [db.subtopic]
   }).then(function(data) {
-    setTimeout(function(){ console.log("Hello"); }, 3000);
+    setTimeout(function(){ 
+      res.render('goldfarb', {data: data});
+      
+    }, 1500);
 
-    res.render('goldfarb', {data: data});
     // res.send(data);
   });
 });

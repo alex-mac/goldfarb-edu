@@ -28,8 +28,7 @@ MyApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
 		// 	  });
   //   	}
 			
-		}
-	});
+		});
 	$locationProvider.html5Mode(true);
 }])
 // .config(['$httpProvider', function($httpProvider) {
