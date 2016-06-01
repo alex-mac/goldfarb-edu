@@ -2,12 +2,12 @@
   "development": {
     "database": "goldfarb_app",
     "host": "127.0.0.1",
-    "dialect": "postgresql"
+    "dialect": "postgres"
   },
   "test": {
-    "database": "database_test",
+    "database": "goldfarb_app",
     "host": "127.0.0.1",
-    "dialect": "postgresql"
+    "dialect": "postgres"
   },
   "production": {
     "use_env_variable": "DATABASE_URL"
