@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
     setTimeout(function(){ 
       res.render('goldfarb', {data: data});
       
-    }, 1500);
+    }, 2000);
 
     // res.send(data);
   });
