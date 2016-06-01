@@ -17,16 +17,16 @@ MyApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
 	})
 	.when('/infobank', {
 		templateUrl: 'app/views/infobank.ejs',
-		controller: 'DataCtrl',
-		resolve: {
-			poneys: function() {
-        db.topic.findAll({
-			    include: [db.subtopic]
-			  }).then(function(data){
-			    // $scope.data = data;
-			  	return data;
-			  });
-    	}
+		// controller: 'DataCtrl',
+		// resolve: {
+		// 	poneys: function() {
+  //       db.topic.findAll({
+		// 	    include: [db.subtopic]
+		// 	  }).then(function(data){
+		// 	    // $scope.data = data;
+		// 	  	return data;
+		// 	  });
+  //   	}
 			
 		}
 	});

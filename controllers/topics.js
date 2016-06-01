@@ -8,7 +8,6 @@ router.get('/', function(req, res) {
   }).then(function(data) {
     setTimeout(function(){ console.log("Hello"); }, 3000);
 
-
     res.render('goldfarb', {data: data});
     // res.send(data);
   });
