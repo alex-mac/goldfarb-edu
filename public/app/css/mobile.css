@@ -2,10 +2,15 @@
 	#bodyh1 {
 		font-size: 24px;
 	}
-	img#logo {
+/*	img#logo {
 		margin-left: 0px;
 		height: 25px;
 		width: 100px;
+	}*/
+
+	#logo {
+	width: 100px;
+	height: 25px;
 	}
 
 	.navbar {
