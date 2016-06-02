@@ -9,7 +9,7 @@
 
 #address {
 	font-family: 'Old Standard TT', serif;
-	margin-bottom: 20px;
+	/*margin-bottom: 20px;*/
 	font-size: 20px;
 }
 
@@ -26,3 +26,13 @@ iframe {
 	margin-bottom: 100px;
 }
 
+#contactinfo {
+	margin: auto;
+	width: 70%;
+	margin-bottom: 200px;
+
+/*	margin-bottom: 200px;
+	margin-left: 30px;
+	margin-right: 30px;*/
+
+}
