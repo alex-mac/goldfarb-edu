@@ -4,13 +4,15 @@ ul, li, p, body {
 }
 #bodyh1 {
 	font-family: 'Oswald', sans-serif;
-	font-size: 30px;
+	font-size: 35px;
 	text-align: center;
+	color: #002B6F;
 }
 
 #bodyh2 {
 	font-family: 'Oswald', sans-serif;
-	font-size: 25px;
+	font-size: 35px;
+
 }
 
 
@@ -18,13 +20,13 @@ ul, li, p, body {
 /*header*/
 .navbar {
 	height: 111px;
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(222, 222, 222, 0.5);
 
 }
 
 #logo {
 	background-image: url('../images/editedlogo.png');
-	width: 300px;
+	width: 308px;
 	height: 75px;
 	background-size: cover;
 	margin-right: 0px;
@@ -127,8 +129,8 @@ a {
 	margin-left: auto;
 	margin-right: auto;
 	width: 700px;
-	height: 580px;
-	margin-bottom: 200px;
+	/*height: 580px;*/
+	margin-bottom: 100px;
 	margin-top: 30px;
 	font-size: 20px;
 }

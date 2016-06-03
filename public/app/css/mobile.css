@@ -41,20 +41,23 @@
 	}
 	
 
-
-
-
-
-
 	#headimage1 {
 		background-position: 30% 20%;
 	}
 
+	#headimage2 {
+		background-position: 60% 20%;
+	}
+
+	#headimage4 {
+		background-position: 60% 20%;
+	}
+
 	.bodyp {
-	margin-left: auto;
-	margin-right: auto;
+/*	margin-left: auto;
+	margin-right: auto;*/
 	width: 300px;
-	height: 425px;
+/*	height: 425px;*/
 /*	margin-bottom: 200px;*/
 	font-size: 15px;
 	}
@@ -74,13 +77,6 @@
 		font-size: 15px;
 	}
 
-	iframe {
-	margin-left: 20px;
-	height: 150px;
-	width: 337px;
-	margin-bottom: 100px;
-	}
-
 	form {
 		width: 100%;
 
@@ -89,8 +85,8 @@
 
 /*	about page*/
 	.img-circle {
-		height: 100px;
-		width: 100px;
+		height: 250px;
+		width: 250px;
 
 	}
 
@@ -131,10 +127,3 @@
 		padding-top: 4px;
 	}
 }
-
-/*@media screen and (max-width: 1024px) {
-	iframe {
-		margin-left: 268px;
-	}
-}
-*/
