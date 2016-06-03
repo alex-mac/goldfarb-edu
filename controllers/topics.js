@@ -6,12 +6,9 @@ router.get('/', function(req, res) {
   db.topic.findAll({
     include: [db.subtopic]
   }).then(function(data) {
-    setTimeout(function(){ 
-      res.render('goldfarb', {data: data});
       
-    }, 2000);
-
-    // res.send(data);
+    res.send(data);
+      
   });
 });
 

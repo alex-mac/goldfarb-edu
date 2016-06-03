@@ -14,7 +14,7 @@ app.use(ejsLayouts);
 // app.use('/hero', require('./controllers/topics'));
 
 app.use('/', require('./controllers/first'));
-app.use('/infobank', require('./controllers/topics.js'));
+app.use('/api/infobank', require('./controllers/topics.js'));
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/index.html'));
