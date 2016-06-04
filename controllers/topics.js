@@ -21,4 +21,13 @@ router.get('/subTopics', function(req, res) {
   });
 });
 
+router.get('/subTopics/:id', function(req, res) {
+  db.subtopic.findById(req.params.id, function(err, garden) {
+    if (err) return res.send({message: 'An error occurred when finding that garden'})
+    res.send(garden)
+  })
+})
+
+
 module.exports = router;
+

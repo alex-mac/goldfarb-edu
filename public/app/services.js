@@ -3,5 +3,5 @@ angular.module('DataServices', ['ngResource'])
   return $resource('/api/infobank/topics');
 }])
 .factory('SubtopicsFactory', ['$resource', function($resource) {
-  return $resource('/api/infobank/subtopics', { query: {method: 'GET', isArray: true}});
+  return $resource('/api/infobank/subtopics/:id');
 }])

@@ -25,7 +25,8 @@ angular.module('GoldfarbCtrls', [])
      console.log(x)
      $scope.topics = false;
      $scope.subtopics = true;
-     SubtopicsFactory.query(function success(subTopicsData) {
+
+     SubtopicsFactory.get({topicId: x}, function success(subTopicsData) {
       $scope.subbyData = subTopicsData;
      }, function error(err) {
       console.log(err)
