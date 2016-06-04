@@ -1,8 +1,7 @@
 console.log('controllers are a go');
 
 angular.module('GoldfarbCtrls', [])
-.controller('DataCtrl', ['$scope', 'DataFactory', function ($scope, DataFactory) {
-  $scope.mines;
+.controller('DataCtrl', ['$scope', 'DataFactory', 'SubtopicsFactory', '$filter', function ($scope, DataFactory,  SubtopicsFactory, $filter) {
 
   DataFactory.query(function success(data) {
     $scope.data = data;
@@ -10,8 +9,27 @@ angular.module('GoldfarbCtrls', [])
     console.log(err)
   });
 
-  var changeInfo = function(input) {
-    console.log(input)
-    $scope.mines = input;
-  }
+  $scope.activate = function(item) {
+    item.selected ? item.selected = false : item.selected = true;
+  } 
+
+  $scope.getAllSelectedRows = function() {
+     var x = $filter("filter")($scope.data, {
+       selected: true
+     }, true);
+
+    for (var i = 0; i < x.length; i++) {
+      x[i] = x[i].id
+    }
+     // console.log(x[0].id);
+     console.log(x)
+     $scope.topics = false;
+     $scope.subtopics = true;
+     SubtopicsFactory.query(function success(subTopicsData) {
+      $scope.subbyData = subTopicsData;
+     }, function error(err) {
+      console.log(err)
+     });
+   }
+  
 }]);

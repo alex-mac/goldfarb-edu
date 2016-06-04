@@ -8,33 +8,25 @@
       With so much changing in the field of education it’s difficult to stay on top of some of the critical information you need to be the best educator you can.  We’ve researched, sourced, vetted, and authored information about some of these critical issues, and below you’ll find a searchable store of information to help you stay current.  Once you’ve filtered for the information you want, you can merely peruse or you can opt to print out in handy sheets.  You can also use the form below to request that additional information be added to the InfoBank.
     </p>
 
-    <div class="dropdown" style="position:relative">
-  <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Infobank <span class="caret"></span></a>
-  <ul class="dropdown-menu">
-    <li >
-      <a class="trigger right-caret" ng-repeat="entry in data">{{entry.title}}</a>
-      <ul class="dropdown-menu sub-menu">
-        <!-- <li><a href="#">Level 2</a></li>
-        <li>
-          <a class="trigger right-caret">Level 2</a>
-          <ul class="dropdown-menu sub-menu">
-            <li><a href="#">Level 3</a></li>
-            <li><a href="#">Level 3</a></li>
-            
-          </ul>
-        </li>
-        <li><a href="#">Level 2</a></li> -->
-        <li>I like turtles</li>
-      </ul>
-    </li>
-   
-  </ul>
-</div>
 
-    <div>
-      {{mines}}
+    <button ng-click="topics=!topics;">Infobank</button>
+    <div ng-show="topics">
+      <ul>
+        <li data-ng-attr-id="{{entry.id}}" ng-repeat="entry in data" ng-click="activate(entry)" 
+        ng-class="{'selected': entry.selected}"><a>{{entry.title}}</a></li>
+        <button ng-click="getAllSelectedRows()">Show Subtopics</button>
+      </ul>
     </div>
+    <div ng-show="subtopics">
+      <ul>
+        <li data-ng-attr-id="{{entry.id}}" ng-repeat="entry in subbyData" ng-click="activate(entry)" 
+        ng-class="{'selected': entry.selected}"><a>{{entry.subtopic}}</a></li>
+        <button ng-click="getAllSelectedRows()">Show Subtopics</button>
+      </ul>
+    </div>
+
   </div>
+
 </div>   
 
 
@@ -73,8 +65,7 @@
 </footer> -->
 
 <script>
-  // $(function(){
-    console.log('im here inside function');
+  $(function(){
   $(".dropdown-menu > li > a.trigger").on("click",function(e){
     var current=$(this).next();
     var grandparent=$(this).parent().parent();
@@ -90,7 +81,7 @@
     root.find('.left-caret').toggleClass('right-caret left-caret');
     root.find('.sub-menu:visible').hide();
   });
-// });
+});
 </script>
 
 <style>
