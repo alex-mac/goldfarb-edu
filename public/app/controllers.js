@@ -4,8 +4,11 @@ angular.module('GoldfarbCtrls', [])
 .controller('DataCtrl', ['$scope', 'DataFactory', 'SubtopicsFactory', '$filter', function ($scope, DataFactory,  SubtopicsFactory, $filter) {
 
   $scope.data;
+  $scope.subtopicData;
+  $scope.finalData = [];
+
   DataFactory.query(function success(data) {
-    $scope.data = data;  console.log($scope.data);
+    $scope.data = data;
 
   }, function error(err) {
     console.log(err)
@@ -21,17 +24,27 @@ angular.module('GoldfarbCtrls', [])
        selected: true
      }, true);
 
-    // for (var i = 0; i < x.length; i++) {
-    //   x[i] = x[i].id
-    // }
-
     $scope.subtopicData = x;
-     console.log($scope.subtopicData[0]);
       // .subtopics[0].subtopic);
      $scope.topics = false;
      $scope.subtopics = true;
+   }
 
-     
+   $scope.getFinal = function() {
+     console.log($scope.subtopicData);
+     console.log($scope.subtopicData.length);
+     for (var i = 0; i < $scope.subtopicData.length; i++) {
+      for (var j = $scope.subtopicData[i].subtopics.length - 1; j >= 0; j--) {
+        if ($scope.subtopicData[i].subtopics[j].selected !== true) {
+          $scope.subtopicData[i].subtopics.splice(j, 1);
+        }
+      } 
+     }
+
+    // console.log($scope.subtopicData);
+   
+     $scope.subtopics = false;
+     $scope.details = true;
    }
   
 }]);

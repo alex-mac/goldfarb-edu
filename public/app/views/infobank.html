@@ -10,6 +10,8 @@
 
 
     <button ng-click="topics=!topics;">Infobank</button>
+
+    <!-- topics -->
     <div ng-show="topics">
       <ul>
         <li data-ng-attr-id="{{entry.id}}" ng-repeat="entry in data" ng-click="activate(entry)" 
@@ -17,6 +19,7 @@
         <button ng-click="getAllSelectedRows()">Show Subtopics</button>
       </ul>
     </div>
+    <!-- subtopics -->
     <div ng-show="subtopics">
       <ul>
       <div data-ng-attr-id="{{subtopics.id}}" ng-repeat="subtopics in subtopicData">
@@ -26,15 +29,21 @@
           <a>{{entry.subtopic}}</a>
         </li>
       </div>
-        <!-- <li data-ng-attr-id="{{entry.id}}" ng-repeat="subtopics in subtopicData" ng-click="activate(entry)" 
-        ng-class="{'selected': entry.selected}">
-          <div ng-repeat="entry in subtopics">
-            Hello
-          </div> -->
-        <button ng-click="getAllSelectedRows()">Show Details</button>
+        <button ng-click="getFinal()">Show Details</button>
       </ul>
     </div>
 
+    <!-- details -->
+    <div ng-show="details">
+      <div data-ng-attr-id="{{subtopics.id}}" ng-repeat="subtopics in subtopicData">
+        <!-- <p>{{subtopics.subtopics}}</p> -->
+        <h3>{{subtopics.title}}</h3>
+        <li ng-repeat="entry in subtopics.subtopics" ng-bind-html-unsafe="entry.response">
+          <h3>{{entry.subtopic}}</h3>
+          <p>{{entry.response}}</p>
+        </li>
+      </div>
+    </div>
   </div>
 
 </div>   
