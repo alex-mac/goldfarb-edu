@@ -19,8 +19,18 @@
     </div>
     <div ng-show="subtopics">
       <ul>
-        <li data-ng-attr-id="{{entry.id}}" ng-repeat="entry in subbyData" ng-click="activate(entry)" 
-        ng-class="{'selected': entry.selected}"><a>{{entry.subtopic}}</a></li>
+      <div data-ng-attr-id="{{subtopics.id}}" ng-repeat="subtopics in subtopicData">
+        <!-- <p>{{subtopics.subtopics}}</p> -->
+        <h3>{{subtopics.title}}</h3>
+        <li ng-repeat="entry in subtopics.subtopics" ng-class="{'selected': entry.selected}" ng-click="activate(entry)">
+          <a>{{entry.subtopic}}</a>
+        </li>
+      </div>
+        <!-- <li data-ng-attr-id="{{entry.id}}" ng-repeat="subtopics in subtopicData" ng-click="activate(entry)" 
+        ng-class="{'selected': entry.selected}">
+          <div ng-repeat="entry in subtopics">
+            Hello
+          </div> -->
         <button ng-click="getAllSelectedRows()">Show Details</button>
       </ul>
     </div>
