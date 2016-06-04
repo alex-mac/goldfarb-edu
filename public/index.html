@@ -34,15 +34,18 @@
   </head>
   <body>
 
-  <script>
-    
-    $('#monitor').html($(window).width());
+<script>
+    $(document).ready(function(){
+      $(window).scroll(function() { // check if scroll event happened
+        if ($(document).scrollTop() > 300) { // check if user scrolled more than 50 from top of the browser window
+          $(".navbar-fixed-top").css("background-color", "#ddd"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+        } else {
+          $(".navbar-fixed-top").css("background-color", "rgba(222, 222, 222, 0.5)"); // if not, change it back to transparent
+        }
+      });
+    });
+</script>
 
-$(window).resize(function() {
-    var viewportWidth = $(window).width();
-    $('#monitor').html(viewportWidth);
-});
-  </script>
   <ng-view></ng-view>
 
   </body>
