@@ -24,6 +24,10 @@
 	font-size: 20px;
 
 }
+
+.selected {
+  background: orange;
+}
 /*#accordion {
 	border-radius: 0px;
 	font-size: 18px;

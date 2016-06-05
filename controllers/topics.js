@@ -2,18 +2,32 @@ var express = require('express');
 var router = express.Router();
 var db = require("../models");
 
-router.get('/', function(req, res) { 
+router.get('/topics', function(req, res) { 
   db.topic.findAll({
-    include: [db.subtopic]
+    include: [db.subtopic],
+    order: [
+      ['title', 'ASC'],
+    ]
   }).then(function(data) {
-    setTimeout(function(){ 
-      res.render('goldfarb', {data: data});
-      
-    }, 2000);
-
-    // res.send(data);
+    res.send(data); 
   });
 });
 
+router.get('/subTopics', function(req, res) { 
+  db.subtopic.findAll({
+
+  }).then(function(data) {
+    res.send(data); 
+  });
+});
+
+router.get('/subTopics/:id', function(req, res) {
+  db.subtopic.findById(req.params.id, function(err, garden) {
+    if (err) return res.send({message: 'An error occurred when finding that garden'})
+    res.send(garden)
+  })
+})
+
 
 module.exports = router;
+

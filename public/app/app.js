@@ -1,4 +1,4 @@
-var MyApp = angular.module('GoldfarbApp', ['ngRoute', 'GoldfarbCtrls']);
+var MyApp = angular.module('GoldfarbApp', ['ngRoute', 'GoldfarbCtrls', 'DataServices']);
 
 MyApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 	console.log('App Running')
@@ -16,19 +16,9 @@ MyApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
 		templateUrl: 'app/views/about.html'
 	})
 	.when('/infobank', {
-		templateUrl: 'app/views/infobank.ejs',
-		// controller: 'DataCtrl',
-		// resolve: {
-		// 	poneys: function() {
-  //       db.topic.findAll({
-		// 	    include: [db.subtopic]
-		// 	  }).then(function(data){
-		// 	    // $scope.data = data;
-		// 	  	return data;
-		// 	  });
-  //   	}
-			
-		});
+		templateUrl: 'app/views/infobank.html',
+		controller: 'DataCtrl'
+	})
 	$locationProvider.html5Mode(true);
 }])
 // .config(['$httpProvider', function($httpProvider) {
