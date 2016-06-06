@@ -1,0 +1,21 @@
+@media print {
+	#print-button {
+		display: none;
+	}
+	.navbar-right {
+		display: none;
+	}
+	#headimage3 {
+		display: none;
+	}
+	p {
+		display: none;
+	}
+
+	.contactform {
+		display: none;
+	}
+	footer {
+		display: none;
+	}
+}
