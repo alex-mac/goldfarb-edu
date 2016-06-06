@@ -17,8 +17,10 @@
         <link rel="stylesheet" href="app/css/mobile.css"/>
         <link rel="stylesheet" href="app/css/infobank.css"/>
         <link rel="stylesheet" href="app/css/contact.css"/>
-        <link rel="stylesheet" href="app/css/tablet.css" type="text/css" media="print"/>
-        <!-- angular -->
+
+        <link rel="stylesheet" href="app/css/tablet.css"/>
+        <link rel="stylesheet" href="app/css/print.css" type="text/css" media="print"/>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-route.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-resource.js"></script>
@@ -36,7 +38,21 @@
 
   </head>
   <body>
-  <nav class="navbar navbar-fixed-top">
+
+
+<script>
+    $(document).ready(function(){
+      $(window).scroll(function() { // check if scroll event happened
+        if ($(document).scrollTop() > 300) { // check if user scrolled more than 50 from top of the browser window
+          $(".navbar-fixed-top").css("background-color", "#ddd"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+        } else {
+          $(".navbar-fixed-top").css("background-color", "rgba(222, 222, 222, 0.5)"); // if not, change it back to transparent
+        }
+      });
+    });
+</script>
+
+<!--   <nav class="navbar navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -59,7 +75,8 @@
         </ul>
       </div>
    </div> 
-  </nav> 
+  </nav>  -->
+
   <ng-view></ng-view>
 
   </body>
