@@ -1,4 +1,4 @@
-var MyApp = angular.module('GoldfarbApp', ['ngRoute', 'GoldfarbCtrls', 'DataServices', 'ngSanitize']);
+var MyApp = angular.module('GoldfarbApp', ['ngRoute', 'GoldfarbCtrls', 'DataServices']);
 
 MyApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 	console.log('App Running')
