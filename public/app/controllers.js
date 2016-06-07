@@ -27,8 +27,20 @@ angular.module('GoldfarbCtrls', [])
     }
   }
 
+
+  $scope.showTopics = function() {
+    $scope.topics= !$scope.topics;
+    $scope.subtopics = false;
+    $scope.details= false;
+
+    for (var i = 0; i < $scope.data.length; i++) {
+      for (var j = 0; j < $scope.subtopicData[i].subtopics.length; j++) {
+       $scope.subtopicData[i].subtopics[j].selected = false;
+      }
+      $scope.data[i].selected = false;
+    }
+  }
   $scope.selectAllSubTopics = function() {
-    console.log($(".selected").length);
     for (var i = 0; i < $scope.data.length; i++) {
       for (var j = 0; j < $scope.subtopicData[i].subtopics.length; j++) {
        $scope.subtopicData[i].subtopics[j].selected = true;
@@ -52,19 +64,17 @@ angular.module('GoldfarbCtrls', [])
    }
 
    $scope.getFinal = function() {
-     console.log($scope.subtopicData);
-     console.log($scope.subtopicData.length);
      for (var i = 0; i < $scope.subtopicData.length; i++) {
       for (var j = $scope.subtopicData[i].subtopics.length - 1; j >= 0; j--) {
         if ($scope.subtopicData[i].subtopics[j].selected !== true) {
           $scope.subtopicData[i].subtopics.splice(j, 1);
 
-        } else {
-          console.log($scope.subtopicData[i].subtopics[j].response);
-        }
+        } 
+        // else {
+        //   console.log($scope.subtopicData[i].subtopics[j].response);
+        // }
       } 
      }
-
    
      $scope.subtopics = false;
      $scope.details = true;
