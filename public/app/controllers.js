@@ -6,6 +6,7 @@ angular.module('GoldfarbCtrls', [])
   $scope.data;
   $scope.subtopicData;
   $scope.finalData = [];
+  $scope.subTopicsCount;
 
   DataFactory.query(function success(data) {
     $scope.data = data;
@@ -24,9 +25,17 @@ angular.module('GoldfarbCtrls', [])
         $scope.data[i].selected = false;
       }
     }
-    
   }
 
+  $scope.selectAllSubTopics = function() {
+    console.log($(".selected").length);
+    for (var i = 0; i < $scope.data.length; i++) {
+      for (var j = 0; j < $scope.subtopicData[i].subtopics.length; j++) {
+       $scope.subtopicData[i].subtopics[j].selected = true;
+      }
+      $scope.data[i].selected = true;
+    }
+  }
 
   $scope.activate = function(item) {
     item.selected ? item.selected = false : item.selected = true;
@@ -38,7 +47,6 @@ angular.module('GoldfarbCtrls', [])
      }, true);
 
     $scope.subtopicData = x;
-      // .subtopics[0].subtopic);
      $scope.topics = false;
      $scope.subtopics = true;
    }
@@ -57,7 +65,6 @@ angular.module('GoldfarbCtrls', [])
       } 
      }
 
-    // console.log($scope.subtopicData);
    
      $scope.subtopics = false;
      $scope.details = true;

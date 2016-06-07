@@ -54,7 +54,7 @@
       <div data-ng-attr-id="{{subtopics.id}}" ng-repeat="subtopics in subtopicData">
         <!-- <p>{{subtopics.subtopics}}</p> -->
         <h3>{{subtopics.title}}</h3>
-        <li ng-repeat="entry in subtopics.subtopics" ng-class="{'selected': entry.selected}" ng-click="activate(entry)">
+        <li ng-repeat="entry in subtopics.subtopics" ng-class="{'selected': entry.selected,'topicsCount': entry.selected}" ng-click="activate(entry)">
           <a>{{entry.subtopic}}</a>
         </li>
       </div>
