@@ -1,4 +1,4 @@
-var MyApp = angular.module('GoldfarbApp', ['ngRoute', 'GoldfarbCtrls', 'DataServices']);
+var MyApp = angular.module('GoldfarbApp', ['ngRoute', 'GoldfarbCtrls', 'DataServices', 'ngSanitize']);
 
 MyApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 	console.log('App Running')
@@ -27,4 +27,4 @@ MyApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
 //   $rootScope.isLoggedIn = function() {
 //     return Auth.isLoggedIn.apply(Auth);
 //   };
-// }]);
+// }])

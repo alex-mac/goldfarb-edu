@@ -1,7 +1,7 @@
 console.log('controllers are a go');
 
 angular.module('GoldfarbCtrls', [])
-.controller('DataCtrl', ['$scope', 'DataFactory', 'SubtopicsFactory', '$filter', function ($scope, DataFactory,  SubtopicsFactory, $filter) {
+.controller('DataCtrl', ['$scope', 'DataFactory', 'SubtopicsFactory', '$filter', '$sce', function ($scope, DataFactory,  SubtopicsFactory, $filter, $sce) {
 
   $scope.data;
   $scope.subtopicData;
@@ -37,6 +37,9 @@ angular.module('GoldfarbCtrls', [])
       for (var j = $scope.subtopicData[i].subtopics.length - 1; j >= 0; j--) {
         if ($scope.subtopicData[i].subtopics[j].selected !== true) {
           $scope.subtopicData[i].subtopics.splice(j, 1);
+
+        } else {
+          console.log($scope.subtopicData[i].subtopics[j].response);
         }
       } 
      }

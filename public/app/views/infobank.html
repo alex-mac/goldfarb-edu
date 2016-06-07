@@ -32,11 +32,13 @@
       With so much changing in the field of education it’s difficult to stay on top of some of the critical information you need to be the best educator you can.  We’ve researched, sourced, vetted, and authored information about some of these critical issues, and below you’ll find a searchable store of information to help you stay current.  Once you’ve filtered for the information you want, you can merely peruse or you can opt to print out in handy sheets.  You can also use the form below to request that additional information be added to the InfoBank.
     </p>
 
-
+    <p>
+      To slect the options you wish to view, please click on the topics of interest, and then proceed by pressing the button below.
+    </p>
     <button ng-click="topics=!topics;">Infobank</button>
 
     <!-- topics -->
-    <div ng-show="topics">
+    <div ng-show="topics" class="infobank">
       <ul>
         <li data-ng-attr-id="{{entry.id}}" ng-repeat="entry in data" ng-click="activate(entry)" 
         ng-class="{'selected': entry.selected}"><a>{{entry.title}}</a></li>
@@ -44,7 +46,7 @@
       </ul>
     </div>
     <!-- subtopics -->
-    <div ng-show="subtopics">
+    <div ng-show="subtopics" class="infobank">
       <ul>
       <div data-ng-attr-id="{{subtopics.id}}" ng-repeat="subtopics in subtopicData">
         <!-- <p>{{subtopics.subtopics}}</p> -->
@@ -58,14 +60,14 @@
     </div>
 
     <!-- details -->
-    <div ng-show="details">
+    <div ng-show="details" class="infobank">
       <div data-ng-attr-id="{{subtopics.id}}" ng-repeat="subtopics in subtopicData">
         <!-- <p>{{subtopics.subtopics}}</p> -->
         <h3>{{subtopics.title}}</h3>
-        <li ng-repeat="entry in subtopics.subtopics" ng-bind-html-unsafe="entry.response">
+        <div ng-repeat="entry in subtopics.subtopics" ng-bind-html-unsafe="entry.response">
           <h3>{{entry.subtopic}}</h3>
-          <p>{{entry.response}}</p>
-        </li>
+          <p ng-bind-html="entry.response"></p>
+        </div>
       </div>
     </div>
   </div>
