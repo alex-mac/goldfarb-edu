@@ -14,6 +14,19 @@ angular.module('GoldfarbCtrls', [])
     console.log(err)
   });
 
+  $scope.selectAllTopics = function() {
+    if ($(".selected").length !== $scope.data.length) {
+      for (var i = 0; i < $scope.data.length; i++) {
+        $scope.data[i].selected = true;
+      }
+    } else {
+      for (var i = 0; i < $scope.data.length; i++) {
+        $scope.data[i].selected = false;
+      }
+    }
+    
+  }
+
 
   $scope.activate = function(item) {
     item.selected ? item.selected = false : item.selected = true;
