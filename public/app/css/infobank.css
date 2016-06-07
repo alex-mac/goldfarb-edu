@@ -81,6 +81,10 @@
 	text-decoration: none; 
 }
 
+@media print {
+    .bodytext2 {display:none;}
+}
+
 
 @media screen and (max-width: 768px) {
 		.bodytext2 {

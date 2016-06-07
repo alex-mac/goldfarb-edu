@@ -28,14 +28,14 @@
   <div class="bodytext">
     <h1 id="bodyh1"> Answers Within Your Reach </h1>
     <hr>
-    <p >
+    <p class="hidden-on-print">
       With so much changing in the field of education it’s difficult to stay on top of some of the critical information you need to be the best educator you can.  We’ve researched, sourced, vetted, and authored information about some of these critical issues, and below you’ll find a searchable store of information to help you stay current.  Once you’ve filtered for the information you want, you can merely peruse or you can opt to print out in handy sheets.  You can also use the form below to request that additional information be added to the InfoBank.
     </p>
 
-    <p>
+    <p class="hidden-on-print">
       To slect the options you wish to view, please click on the topics of interest, and then proceed by pressing the button below.
     </p>
-    <button ng-click="topics=!topics;">Infobank</button>
+    <button ng-click="topics=!topics;" class="hidden-on-print">Infobank</button>
 
     <!-- topics -->
     <div ng-show="topics" class="infobank">
@@ -65,7 +65,7 @@
         <!-- <p>{{subtopics.subtopics}}</p> -->
         <h3>{{subtopics.title}}</h3>
         <div ng-repeat="entry in subtopics.subtopics" ng-bind-html-unsafe="entry.response">
-          <h3>{{entry.subtopic}}</h3>
+          <h4>{{entry.subtopic}}</h4>
           <p ng-bind-html="entry.response"></p>
         </div>
       </div>
