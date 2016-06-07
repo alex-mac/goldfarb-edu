@@ -53,10 +53,14 @@
 }
 
 .selected {
-  border: 1px solid orange;
+  background: orange;
 }
 
 .infobank {
+	margin: 20px 0px;
+}
+
+.infobank button, input, select, textarea {
 	margin: 20px 0px;
 }
 
