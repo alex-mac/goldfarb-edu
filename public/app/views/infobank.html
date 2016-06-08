@@ -35,7 +35,7 @@
       To slect the options you wish to view, please click on the topics of interest, and then proceed by pressing the button below.
     </p>
 
-    <span><button ng-click="showTopics();" class="hidden-on-print">Infobank</button></span>
+    <span><button ng-click="showTopics();" title="Select items by clicking on the topic of interest—to select more than one topic, click on each topic, which then will be highlighted to indicate your selection.  After you’ve selected the topic, you can then select finer grain details related to the topic by hitting the ‘Sub-Topic button" class="hidden-on-print">Select topic(s) of Interest</button></span>
 
     <!-- topics -->
     <div ng-show="topics" class="infobank">
@@ -65,10 +65,13 @@
     <div ng-show="details" class="infobank">
       <div data-ng-attr-id="{{subtopics.id}}" ng-repeat="subtopics in subtopicData">
         <!-- <p>{{subtopics.subtopics}}</p> -->
-        <h3>{{subtopics.title}}</h3>
+        <h2>{{subtopics.title}}</h2>
         <div ng-repeat="entry in subtopics.subtopics" ng-bind-html-unsafe="entry.response">
-          <h4>{{entry.subtopic}}</h4>
+          <h3>{{entry.subtopic}}</h3>
           <p ng-bind-html="entry.response"></p>
+          <br>
+          <a href="{{entry.url}}" target="_/" style="color:#002B6F;"><u>{{entry.source}}</u></a>
+          <hr>
         </div>
       </div>
     </div>
