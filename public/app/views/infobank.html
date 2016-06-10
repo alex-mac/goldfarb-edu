@@ -40,6 +40,7 @@
     <!-- topics -->
     <div ng-show="topics" class="infobank">
       <button ng-click="selectAllTopics()" class="hidden-on-print">Select All</button>
+      <p>Select items by clicking on the topic of interest—to select more than one topic, click on each topic, which then will be highlighted to indicate your selection.  After you’ve selected the topic, you can then select finer grain details related to the topic by hitting the ‘Sub-Topic button</p>
       <ul>
         <li data-ng-attr-id="{{entry.id}}" ng-repeat="entry in data" ng-click="activate(entry)" 
         ng-class="{'selected': entry.selected}"><a>{{entry.title}}</a></li>
@@ -70,7 +71,7 @@
           <h3>{{entry.subtopic}}</h3>
           <p ng-bind-html="entry.response"></p>
           <br>
-          <a href="{{entry.url}}" target="_/" style="color:#002B6F;"><u>{{entry.source}}</u></a>
+          <a href="{{entry.url}}" target="_/" style="color:#002B6F;">Source: <u>{{entry.source}}</u></a>
           <hr>
         </div>
       </div>
