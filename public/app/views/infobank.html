@@ -28,19 +28,20 @@
     <h1 id="bodyh1"> Answers Within Your Reach </h1>
     <hr>
     <p class="hidden-on-print">
-      With so much changing in the field of education it’s difficult to stay on top of some of the critical information you need to be the best educator you can.  We’ve researched, sourced, vetted, and authored information about some of these critical issues, and below you’ll find a searchable store of information to help you stay current.  Once you’ve filtered for the information you want, you can merely peruse or you can opt to print out in handy sheets.  You can also use the form below to request that additional information be added to the InfoBank.
+      With so much changing in the field of education it’s difficult to stay on top of some of the critical information you need to be the best educator you can.  We’ve researched, sourced, vetted, and authored information about some of these critical issues, and below you’ll find a searchable store of information to help you stay current. You can also use the form below to request that additional information be added to the InfoBank.
+
     </p>
 
     <p class="hidden-on-print">
       To slect the options you wish to view, please click on the topics of interest, and then proceed by pressing the button below.
     </p>
 
-    <span><button ng-click="showTopics();" title="Select items by clicking on the topic of interest—to select more than one topic, click on each topic, which then will be highlighted to indicate your selection.  After you’ve selected the topic, you can then select finer grain details related to the topic by hitting the ‘Sub-Topic button" class="hidden-on-print">Select topic(s) of Interest</button></span>
+    <span><button ng-click="showTopics();" title="Select items by clicking on the topic of interest—to select more than one topic, click on each topic, which then will be highlighted to indicate your selection.  After you’ve selected the topic, you can then select finer grain details related to the topic by hitting the 'Sub-Topic button'." class="hidden-on-print">Select topic(s) of Interest</button></span>
 
     <!-- topics -->
     <div ng-show="topics" class="infobank">
       <button ng-click="selectAllTopics()" class="hidden-on-print">Select All</button>
-      <p>Select items by clicking on the topic of interest—to select more than one topic, click on each topic, which then will be highlighted to indicate your selection.  After you’ve selected the topic, you can then select finer grain details related to the topic by hitting the ‘Sub-Topic button</p>
+      <p>Select items by clicking on the topic of interest — to select more than one topic, click on each topic, which then will be highlighted to indicate your selection.  After you’ve selected the topic, you can then select finer grain details related to the topic by hitting the ‘Sub-Topic' button.</p>
       <ul>
         <li data-ng-attr-id="{{entry.id}}" ng-repeat="entry in data" ng-click="activate(entry)" 
         ng-class="{'selected': entry.selected}"><a>{{entry.title}}</a></li>
@@ -80,3 +81,103 @@
   </div>
 
 </div>   
+
+
+ <!--  <div class="bodytext2">
+       <p>
+       Looking for some you can’t find in the information bank? 
+       Tell us what else you’re looking for, and add your contact informtation if you’d like us to contact you to clarify the request.
+       </p>
+  </div> -->
+
+    <form>
+    <input type="button" id="print-button" value="Print this Page" onClick="window.print()">
+    </form>
+    
+    <input type="button" value="Refresh Page" onClick="window.location.reload()">
+
+  <div class="contactform">
+    <form action="MAILTO:jgoldfarb@goldfarbedconsult.com" method="post" enctype="text/plain">
+    Name<br>
+    <input id="inputfield" type="text" name="name" value=""><br>
+    Your E-mail<br>
+    <input id="inputfield" type="text" name="mail" value=""><br>
+    Message<br>
+    <input id="inputfield2" type="text" name="comment" value=""><br><br>
+    <button class="btn btn-primary" type="submit" value="Send">Send</button>
+    </form>
+  </div>
+
+<!-- <footer>
+  <nav class="navbar navbar-default navbar-fixed-bottom" id="footer">
+    <div class="container">
+      <a href="https://www.linkedin.com/m/profile/ACoAAACr6vABoLLCwRzrsx7Jk0wqT2pZGCzdyQ4/">
+        <div id="linkedin"></div>
+      </a>
+      <p>(e) info@goldfarbedconsult.com</p>
+    </div>
+  </nav>  
+</footer>
+ -->
+<script>
+  $(function(){
+  $(".dropdown-menu > li > a.trigger").on("click",function(e){
+    var current=$(this).next();
+    var grandparent=$(this).parent().parent();
+    if($(this).hasClass('left-caret')||$(this).hasClass('right-caret'))
+      $(this).toggleClass('right-caret left-caret');
+    grandparent.find('.left-caret').not(this).toggleClass('right-caret left-caret');
+    grandparent.find(".sub-menu:visible").not(current).hide();
+    current.toggle();
+    e.stopPropagation();
+  });
+  $(".dropdown-menu > li > a:not(.trigger)").on("click",function(){
+    var root=$(this).closest('.dropdown');
+    root.find('.left-caret').toggleClass('right-caret left-caret');
+    root.find('.sub-menu:visible').hide();
+  });
+});
+</script>
+
+<style>
+  .dropdown-menu>li
+{ position:relative;
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+  cursor:pointer;
+}
+.dropdown-menu .sub-menu {
+    left: 100%;
+    position: absolute;
+    top: 0;
+    display:none;
+    margin-top: -1px;
+  border-top-left-radius:0;
+  border-bottom-left-radius:0;
+  border-left-color:#fff;
+  box-shadow:none;
+}
+.right-caret:after,.left-caret:after
+ {  content:"";
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    display: inline-block;
+    height: 0;
+    vertical-align: middle;
+    width: 0;
+  margin-left:5px;
+}
+.right-caret:after
+{ border-left: 5px solid #ffaf46;
+}
+.left-caret:after
+{ border-right: 5px solid #ffaf46;
+}
+</style>
+
+<!-- </div>   --> 
+
