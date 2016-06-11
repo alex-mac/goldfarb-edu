@@ -1,18 +1,47 @@
+<nav class="navbar navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/"><div id="logo"></div></a>
+    </div>
+
+    <div class="navbar-collapse collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">      
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/infobank">InfoBank</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contactus">Contact Us</a></li>
+      </ul>
+    </div>
+  </div> 
+</nav>     
+
 <div id="headimage3"></div>
 
 <div class="container">
   <div class="bodytext">
     <h1 id="bodyh1"> Answers Within Your Reach </h1>
     <hr>
-    <p >
-      With so much changing in the field of education it’s difficult to stay on top of some of the critical information you need to be the best educator you can.  We’ve researched, sourced, vetted, and authored information about some of these critical issues, and below you’ll find a searchable store of information to help you stay current.  You can also use the form below to request that additional information be added to the InfoBank.
+    <p class="hidden-on-print">
+      With so much changing in the field of education it’s difficult to stay on top of some of the critical information you need to be the best educator you can.  We’ve researched, sourced, vetted, and authored information about some of these critical issues, and below you’ll find a searchable store of information to help you stay current. You can also use the form below to request that additional information be added to the InfoBank.
+
     </p>
 
+    <p class="hidden-on-print">
+      To slect the options you wish to view, please click on the topics of interest, and then proceed by pressing the button below.
+    </p>
 
-    <button ng-click="topics=!topics;">Infobank</button>
+    <span><button ng-click="showTopics();" title="Select items by clicking on the topic of interest—to select more than one topic, click on each topic, which then will be highlighted to indicate your selection.  After you’ve selected the topic, you can then select finer grain details related to the topic by hitting the 'Sub-Topic button'." class="hidden-on-print">Select topic(s) of Interest</button></span>
 
     <!-- topics -->
-    <div ng-show="topics">
+    <div ng-show="topics" class="infobank">
+      <button ng-click="selectAllTopics()" class="hidden-on-print">Select All</button>
+      <p>Select items by clicking on the topic of interest — to select more than one topic, click on each topic, which then will be highlighted to indicate your selection.  After you’ve selected the topic, you can then select finer grain details related to the topic by hitting the ‘Sub-Topic' button.</p>
       <ul>
         <li data-ng-attr-id="{{entry.id}}" ng-repeat="entry in data" ng-click="activate(entry)" 
         ng-class="{'selected': entry.selected}"><a>{{entry.title}}</a></li>
@@ -20,12 +49,14 @@
       </ul>
     </div>
     <!-- subtopics -->
-    <div ng-show="subtopics">
+    <div ng-show="subtopics" class="infobank">
+      <button ng-click="selectAllSubTopics()" class="hidden-on-print">Select All</button>
+      <p>To search topics again just hit this button to see the topic list.</p>
       <ul>
       <div data-ng-attr-id="{{subtopics.id}}" ng-repeat="subtopics in subtopicData">
         <!-- <p>{{subtopics.subtopics}}</p> -->
         <h3>{{subtopics.title}}</h3>
-        <li ng-repeat="entry in subtopics.subtopics" ng-class="{'selected': entry.selected}" ng-click="activate(entry)">
+        <li ng-repeat="entry in subtopics.subtopics" ng-class="{'selected': entry.selected,'topicsCount': entry.selected}" ng-click="activate(entry)">
           <a>{{entry.subtopic}}</a>
         </li>
       </div>
@@ -34,14 +65,17 @@
     </div>
 
     <!-- details -->
-    <div ng-show="details">
+    <div ng-show="details" class="infobank">
       <div data-ng-attr-id="{{subtopics.id}}" ng-repeat="subtopics in subtopicData">
         <!-- <p>{{subtopics.subtopics}}</p> -->
-        <h3>{{subtopics.title}}</h3>
-        <li ng-repeat="entry in subtopics.subtopics" ng-bind-html-unsafe="entry.response">
+        <h2>{{subtopics.title}}</h2>
+        <div ng-repeat="entry in subtopics.subtopics" ng-bind-html-unsafe="entry.response">
           <h3>{{entry.subtopic}}</h3>
-          <p>{{entry.response}}</p>
-        </li>
+          <p ng-bind-html="entry.response"></p>
+          <br>
+          <a href="{{entry.url}}" target="_/" style="color:#002B6F;">Source: <u>{{entry.source}}</u></a>
+          <hr>
+        </div>
       </div>
     </div>
   </div>
@@ -59,6 +93,8 @@
     <form>
     <input type="button" id="print-button" value="Print this Page" onClick="window.print()">
     </form>
+    
+    <input type="button" value="Refresh Page" onClick="window.location.reload()">
 
   <div class="contactform">
     <form action="MAILTO:jgoldfarb@goldfarbedconsult.com" method="post" enctype="text/plain">
@@ -142,3 +178,6 @@
 { border-right: 5px solid #ffaf46;
 }
 </style>
+
+<!-- </div>   --> 
+

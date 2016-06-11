@@ -8,10 +8,14 @@
 	#headimage3 {
 		display: none;
 	}
-	p {
+
+	.hidden-on-print {
 		display: none;
 	}
 
+	p {
+		font-size: 16px;
+	}
 	.contactform {
 		display: none;
 	}
