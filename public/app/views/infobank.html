@@ -33,7 +33,7 @@
     </p>
 
     <p class="hidden-on-print">
-      To slect the options you wish to view, please click on the topics of interest, and then proceed by pressing the button below.
+      To select the options you wish to view, please click on the topics of interest, and then proceed by pressing the button below.
     </p>
 
     <span><button ng-click="showTopics();" title="Select items by clicking on the topic of interest—to select more than one topic, click on each topic, which then will be highlighted to indicate your selection.  After you’ve selected the topic, you can then select finer grain details related to the topic by hitting the 'Sub-Topic button'." class="hidden-on-print">Select topic(s) of Interest</button></span>
@@ -96,13 +96,14 @@
     
     <input type="button" value="Refresh Page" onClick="window.location.reload()">
 
+  <h1>Request Information on Other Topics</h1>
   <div class="contactform">
     <form action="MAILTO:jgoldfarb@goldfarbedconsult.com" method="post" enctype="text/plain">
     Name<br>
     <input id="inputfield" type="text" name="name" value=""><br>
     Your E-mail<br>
     <input id="inputfield" type="text" name="mail" value=""><br>
-    Message<br>
+    Requested Topics<br>
     <input id="inputfield2" type="text" name="comment" value=""><br><br>
     <button class="btn btn-primary" type="submit" value="Send">Send</button>
     </form>
@@ -118,66 +119,3 @@
     </div>
   </nav>  
 </footer>
- -->
-<script>
-  $(function(){
-  $(".dropdown-menu > li > a.trigger").on("click",function(e){
-    var current=$(this).next();
-    var grandparent=$(this).parent().parent();
-    if($(this).hasClass('left-caret')||$(this).hasClass('right-caret'))
-      $(this).toggleClass('right-caret left-caret');
-    grandparent.find('.left-caret').not(this).toggleClass('right-caret left-caret');
-    grandparent.find(".sub-menu:visible").not(current).hide();
-    current.toggle();
-    e.stopPropagation();
-  });
-  $(".dropdown-menu > li > a:not(.trigger)").on("click",function(){
-    var root=$(this).closest('.dropdown');
-    root.find('.left-caret').toggleClass('right-caret left-caret');
-    root.find('.sub-menu:visible').hide();
-  });
-});
-</script>
-
-<style>
-  .dropdown-menu>li
-{ position:relative;
-  -webkit-user-select: none; /* Chrome/Safari */        
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+ */
-  /* Rules below not implemented in browsers yet */
-  -o-user-select: none;
-  user-select: none;
-  cursor:pointer;
-}
-.dropdown-menu .sub-menu {
-    left: 100%;
-    position: absolute;
-    top: 0;
-    display:none;
-    margin-top: -1px;
-  border-top-left-radius:0;
-  border-bottom-left-radius:0;
-  border-left-color:#fff;
-  box-shadow:none;
-}
-.right-caret:after,.left-caret:after
- {  content:"";
-    border-bottom: 5px solid transparent;
-    border-top: 5px solid transparent;
-    display: inline-block;
-    height: 0;
-    vertical-align: middle;
-    width: 0;
-  margin-left:5px;
-}
-.right-caret:after
-{ border-left: 5px solid #ffaf46;
-}
-.left-caret:after
-{ border-right: 5px solid #ffaf46;
-}
-</style>
-
-<!-- </div>   --> 
-
