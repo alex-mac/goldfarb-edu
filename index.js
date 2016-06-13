@@ -11,10 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(ejsLayouts);
 
-// app.use('/hero', require('./controllers/topics'));
-
 app.use('/api/infobank', require('./controllers/topics.js'));
-app.use('/chyi', require('./controllers/chyi.js'));
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/index.html'));
