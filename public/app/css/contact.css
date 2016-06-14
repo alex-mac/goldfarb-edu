@@ -21,7 +21,8 @@
 }
 
 #contactinfo {
-	margin: auto;
+	/*margin: auto;
 	width: 70%;
-	margin-bottom: 200px;
+	margin-bottom: 200px;*/
+	text-align: center;
 }
