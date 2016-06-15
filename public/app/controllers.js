@@ -70,7 +70,8 @@ angular.module('GoldfarbCtrls', [])
           $scope.subtopicData[i].subtopics.splice(j, 1);
 
         } 
-  
+        
+      } 
      }
    
      $scope.subtopics = false;
