@@ -21,10 +21,3 @@ MyApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
 	})
 	$locationProvider.html5Mode(true);
 }])
-// .config(['$httpProvider', function($httpProvider) {
-//   $httpProvider.interceptors.push('AuthInterceptor');
-// }]).run(["$rootScope", "Auth", function($rootScope, Auth) {
-//   $rootScope.isLoggedIn = function() {
-//     return Auth.isLoggedIn.apply(Auth);
-//   };
-// }])

@@ -3,18 +3,25 @@ console.log('controllers are a go');
 angular.module('GoldfarbCtrls', [])
 .controller('DataCtrl', ['$scope', 'DataFactory', 'SubtopicsFactory', '$filter', '$sce', function ($scope, DataFactory,  SubtopicsFactory, $filter, $sce) {
 
-  $scope.data;
+  $scope.topicsData;
   $scope.subtopicData;
   $scope.finalData = [];
   $scope.subTopicsCount;
 
+  // uses DataFactory object to get all the topics from the database
   DataFactory.query(function success(data) {
-    $scope.data = data;
-
+    $scope.topicsData = data;
   }, function error(err) {
     console.log(err)
   });
 
+  // when a user clicks on an item (topic or sub-topic), this function highlights or unhighlights the item.
+  $scope.highlight = function(item) {
+    item.selected ? item.selected = false : item.selected = true;
+  } 
+
+  // if no topics are selected or if topics are partially selected, highlight all topics
+  // if all topics are highlighted, unhighlight all topics
   $scope.selectAllTopics = function() {
     if ($(".selected").length !== $scope.data.length) {
       for (var i = 0; i < $scope.data.length; i++) {
@@ -27,7 +34,7 @@ angular.module('GoldfarbCtrls', [])
     }
   }
 
-
+  // when user submits topics, show subtopics
   $scope.showTopics = function() {
     $scope.topics= !$scope.topics;
     $scope.subtopics = false;
@@ -35,11 +42,12 @@ angular.module('GoldfarbCtrls', [])
 
     for (var i = 0; i < $scope.data.length; i++) {
       for (var j = 0; j < $scope.subtopicData[i].subtopics.length; j++) {
-       $scope.subtopicData[i].subtopics[j].selected = false;
+        $scope.subtopicData[i].subtopics[j].selected = false;
       }
       $scope.data[i].selected = false;
     }
   }
+
   $scope.selectAllSubTopics = function() {
     for (var i = 0; i < $scope.data.length; i++) {
       for (var j = 0; j < $scope.subtopicData[i].subtopics.length; j++) {
@@ -48,10 +56,6 @@ angular.module('GoldfarbCtrls', [])
       $scope.data[i].selected = true;
     }
   }
-
-  $scope.activate = function(item) {
-    item.selected ? item.selected = false : item.selected = true;
-  } 
 
   $scope.getAllSelectedRows = function() {
      var x = $filter("filter")($scope.data, {
@@ -73,9 +77,8 @@ angular.module('GoldfarbCtrls', [])
         
       } 
      }
-   
+
      $scope.subtopics = false;
      $scope.details = true;
    }
-  
 }]);
