@@ -23,13 +23,13 @@ angular.module('GoldfarbCtrls', [])
   // if no topics are selected or if topics are partially selected, highlight all topics
   // if all topics are highlighted, unhighlight all topics
   $scope.selectAllTopics = function() {
-    if ($(".selected").length !== $scope.data.length) {
-      for (var i = 0; i < $scope.data.length; i++) {
-        $scope.data[i].selected = true;
+    if ($(".selected").length !== $scope.topicsData.length) {
+      for (var i = 0; i < $scope.topicsData.length; i++) {
+        $scope.topicsData[i].selected = true;
       }
     } else {
-      for (var i = 0; i < $scope.data.length; i++) {
-        $scope.data[i].selected = false;
+      for (var i = 0; i < $scope.topicsData.length; i++) {
+        $scope.topicsData[i].selected = false;
       }
     }
   }
@@ -40,25 +40,25 @@ angular.module('GoldfarbCtrls', [])
     $scope.subtopics = false;
     $scope.details= false;
 
-    for (var i = 0; i < $scope.data.length; i++) {
-      for (var j = 0; j < $scope.subtopicData[i].subtopics.length; j++) {
-        $scope.subtopicData[i].subtopics[j].selected = false;
+    for (var i = 0; i < $scope.topicsData.length; i++) {
+      for (var j = 0; j < $scope.topicsData[i].subtopics.length; j++) {
+        $scope.topicsData[i].subtopics[j].selected = false;
       }
-      $scope.data[i].selected = false;
+      $scope.topicsData[i].selected = false;
     }
   }
 
   $scope.selectAllSubTopics = function() {
-    for (var i = 0; i < $scope.data.length; i++) {
-      for (var j = 0; j < $scope.subtopicData[i].subtopics.length; j++) {
-       $scope.subtopicData[i].subtopics[j].selected = true;
+    for (var i = 0; i < $scope.topicsData.length; i++) {
+      for (var j = 0; j < $scope.topicsData[i].subtopics.length; j++) {
+       $scope.topicsData[i].subtopics[j].selected = true;
       }
-      $scope.data[i].selected = true;
+      $scope.topicsData[i].selected = true;
     }
   }
 
   $scope.getAllSelectedRows = function() {
-     var x = $filter("filter")($scope.data, {
+     var x = $filter("filter")($scope.topicsData, {
        selected: true
      }, true);
 
@@ -68,10 +68,10 @@ angular.module('GoldfarbCtrls', [])
    }
 
    $scope.getFinal = function() {
-     for (var i = 0; i < $scope.subtopicData.length; i++) {
-      for (var j = $scope.subtopicData[i].subtopics.length - 1; j >= 0; j--) {
-        if ($scope.subtopicData[i].subtopics[j].selected !== true) {
-          $scope.subtopicData[i].subtopics.splice(j, 1);
+     for (var i = 0; i < $scope.topicsData.length; i++) {
+      for (var j = $scope.topicsData[i].subtopics.length - 1; j >= 0; j--) {
+        if ($scope.topicsData[i].subtopics[j].selected !== true) {
+          $scope.topicsData[i].subtopics.splice(j, 1);
 
         } 
         
