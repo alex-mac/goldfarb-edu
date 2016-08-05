@@ -1,5 +1,3 @@
-console.log('controllers are a go');
-
 angular.module('GoldfarbCtrls', [])
 .controller('DataCtrl', ['$scope', 'DataFactory', 'SubtopicsFactory', '$filter', '$sce', function ($scope, DataFactory,  SubtopicsFactory, $filter, $sce) {
 
