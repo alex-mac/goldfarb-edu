@@ -76,6 +76,7 @@
   cursor: pointer;
   font-size: 18px;
   background: lightgray;
+  transition: .15s;
 }
 
 .infobank .selected li:hover {
