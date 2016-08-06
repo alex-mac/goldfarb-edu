@@ -2,9 +2,7 @@
 ul, li, p, body {	
 	font-family: 'Old Standard TT', serif;
 }
-/*body {
-	padding-top:  70px;
-}*/
+
 #bodyh1 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 35px;
@@ -17,8 +15,6 @@ ul, li, p, body {
 	font-size: 35px;
 
 }
-
-
 
 /*header*/
 .navbar {
@@ -46,7 +42,6 @@ a {
 	padding-top: 30px;	
 	margin-right: 20px;
 }
-
 
 /*bodyimages*/
 #headimage1 {
@@ -110,8 +105,8 @@ a {
 	top: 0;
 	background-size: cover;
 	background-attachment: fixed;
-	
 }
+
 #bodyimage1 {
 	background-image: url('../images/light.jpg');
 	height: 300px;
@@ -122,10 +117,7 @@ a {
 	top: 0;
 	background-size: cover;
 	background-attachment: fixed;
-	
 }
-
-
 
 .bodyp {
 	margin-left: auto;
@@ -137,19 +129,16 @@ a {
 	font-size: 20px;
 }
 
-
-
 /*forms*/
 #inputfield {
 	width: 300px;
 	margin-bottom: 10px;
-
 }
+
 #inputfield2 {
 	width: 300px;
 	height: 100px;
 	margin-bottom: 15px;
-
 }
 
 .contactform {
@@ -158,12 +147,10 @@ a {
 	margin-top: 30px;
 	font-size: 20px;
 }
+
 textarea {
 	border-color: #cccccc;
 }
-
-
-
 
 /*footer*/
 #linkedin {
@@ -175,7 +162,6 @@ textarea {
 	margin-right: auto;
 }
 
-
 .navbar-fixed-bottom{
 	height: 75px;
 }
@@ -184,5 +170,4 @@ textarea {
 	text-align: center;
 	background-color: rgba(255, 255, 255, 0.7);
 	padding-top: 15px;
-
 }
